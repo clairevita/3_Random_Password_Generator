@@ -2,7 +2,7 @@
 
 ## Script.js
 
-This script randomly generates passwords according to the users preference. This script can be broken into five sections, simply and effectively meeting the provided criteria.
+This script randomly generates passwords according to the users preference. This script can be broken into five sections, simply and effectively meeting the provided criteria. To best accomplish password security, a Fisher-Yates Shuffle has been implemented to randomize all character inclusion validation checks.
 
 ### On Start
 
