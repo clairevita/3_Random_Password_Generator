@@ -36,11 +36,10 @@ let passChars = "abcdefghijklmnopqrstuvwxyz--ABCDEFGHIJKLMNOPQRSTUVWXYZ--1234567
     }
 
     //If they try to create a password less then 8 characters long, it prompts confirms that they are comfortable with an insecure password.
-    if (passLength <= 7){
-        let caution = confirm("Secure passwords must be at least 8 characters long. Are you sure you want to continue?")
-        if (caution == false){
-            return "";
-        }
+    if (passLength < 8 || passLength > 128){
+        let caution = confirm("Secure passwords must be between 8 and 128 characters.")
+        return "";
+        
     }
 
     //The following prompts ask the user for password content preferences and modifies the pool it will be randomly selecting from.
@@ -66,9 +65,6 @@ let passChars = "abcdefghijklmnopqrstuvwxyz--ABCDEFGHIJKLMNOPQRSTUVWXYZ--1234567
         alert("You must select at least one character type for your password!")
         return "";
     }
-
-    //Parses the specified length into an integer.
-    
 
     //According to how many characters long the user specified, repeatedly adds random characters from the pool defined by the prompts.
     for (let i = 0; i < passLength; i++) { let random=Math.floor(Math.random() * enabledChars.length); finalPW +=enabledChars[random]; } 
